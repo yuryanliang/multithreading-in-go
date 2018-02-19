@@ -10,7 +10,7 @@ func main() {
 	rand.Seed(time.Now().UTC().UnixNano())
 
 	query := "Our Query"
-	respond := make(chan string)
+	respond := make(chan string, 1)
 
 	go googleIt(respond, query)
 
